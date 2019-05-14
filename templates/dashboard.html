@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/util_dashboard.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main_dashboard.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color:#9fcdff;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/dashboard" ><img  src="static/images/icons/logo.png" "></a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </ul>
+    <form action="/logout" class="form-inline my-2 my-lg-0">
+      <button  class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Çıxış</button>
+    </form>
+  </div>
+</nav>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Ad və Soyad</th>
+								<th class="column2">Cins</th>
+								<th class="column3">E-mail</th>
+								<th class="column4">Mobil nömrə</th>
+								<th class="column5">Sahə</th>
+								<th class="column6">Universitet</th>
+							</tr>
+						</thead>
+						<tbody>
+                         {% for student in Students %}
+								<tr>
+                                    <td class="column1">{{ student['name'] }}</td>
+                                    <td class="column2">{{ student['gender'] }}</td>
+                                    <td class="column3">{{ student['email'] }}</td>
+                                    <td class="column4">{{ student['phone'] }}</td>
+                                    <td class="column5">{{ student['field'] }}</td>
+                                    <td class="column6">{{ student['uni'] }}</td>
+
+								</tr>
+                        {% endfor %}
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+    function submit(){
+        alert(1)
+    }
+</script>
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
